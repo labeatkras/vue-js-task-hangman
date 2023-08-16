@@ -1,0 +1,83 @@
+body {
+  background-color: #1e1e1e;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+#app {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #fff;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+#top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#fails {
+  margin-left: 1rem;
+  font-size: 24px;
+}
+
+#newGameBtn {
+  background-color: #fff;
+  color: #1e1e1e;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#newGameBtn:hover {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+#outputArea {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#output {
+  font-size: 48px;
+  letter-spacing: 10px;
+}
+
+#keyboardArea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#keyboardBtns {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 24px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#keyboardBtns:hover {
+  background-color: #1e1e1e;
+  color: #fff;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman! Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app"> <!-- Defines the root Vue instance -->
+        <header>
+            <h1>Hangman!</h1> <!-- Displays the title of the game -->
+        </header>
+        <main>
+            <section id="top"> <!-- Defines the top section of the game UI -->
+                <div id="status">{{status}}</div> <!-- Displays the current status of the game -->
+                <div id="fails">Fails {{fails}}/10</div> <!-- Displays the number of failed attempts -->
+                <div id="time">Time: {{Math.floor(time / 60)}}:{{(time % 60).toString().padStart(2, "0")}}</div>
+                <!-- Displays the remaining time in minutes and seconds -->
+                <div id="gameDuration"> <!-- Defines the game duration selection dropdown -->
+                    Game duration:
+                    <select v-model="gameDuration"> <!-- Binds the selected game duration to the Vue instance -->
+                        <option v-for="duration in gameDurationOptions" :value="duration">{{duration}} seconds</option>
+                        <!-- Defines the available game duration options -->
+                    </select>
+                </div>
+                <button id="newGameBtn" @click="startNewGame">New Game</button> <!-- Starts a new game when clicked -->
+            </section>
+            <section id="outputArea"> <!-- Defines the output section of the game UI -->
+                <div id="output">{{hiddenWord}}</div> <!-- Displays the hidden word with underscores -->
+            </section>
+
+            <section id="keyboardArea"> <!-- Defines the keyboard section of the game UI -->
+                <button id="keyboardBtns" v-for="(char, index) in alphabet" @click="pickingLetter(char)"
+                    :disabled="toBeDisabled[char]" :key="char">{{char}}</button>
+                <!-- Displays the keyboard buttons for each letter of the alphabet -->
+            </section>
+        </main>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script> <!-- Links to the Vue.js library -->
+    <script src="script.js"></script> <!-- Links to the JavaScript file that defines the Vue app -->
+</body>
+
+</html>
